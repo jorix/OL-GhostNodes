@@ -1,5 +1,4 @@
-var map, vectorLayer;
-        
+// Declare a custom control to delete features.
 var DeleteFeature = OpenLayers.Class(OpenLayers.Control, {
     initialize: function(layer, options) {
         OpenLayers.Control.prototype.initialize.apply(this, [options]);
@@ -23,8 +22,7 @@ var DeleteFeature = OpenLayers.Class(OpenLayers.Control, {
     CLASS_NAME: "OpenLayers.Control.DeleteFeature"
 });
 
-
-//OpenLayers.ProxyHost = "proxy.cgi?url=";
+// Create the map
 var map = new OpenLayers.Map({
     div: "map",
     maxResolution: 156543.0339,
@@ -40,6 +38,7 @@ var map = new OpenLayers.Map({
     ]
 });
 
+// Crate a vector layer
 var styles = new OpenLayers.StyleMap({
     "default": new OpenLayers.Style(null, {
         rules: [
@@ -91,6 +90,7 @@ var vectorLayer = new OpenLayers.Layer.Vector("Editable Features", {
     strategies: [new OpenLayers.Strategy.Fixed()],
     projection: new OpenLayers.Projection("EPSG:4326"),
     styleMap: styles,
+    //Use HTTP instead of WFS, because WFS doesn't work on gh-pages
     protocol: new OpenLayers.Protocol.HTTP({
         srsName: "EPSG:4326",
         url: "data/demo_opengeo_org_geoserver_wfs.xml",
@@ -98,14 +98,14 @@ var vectorLayer = new OpenLayers.Layer.Vector("Editable Features", {
                 version: "1.1.0",
                 featureType: "roads",
                 featureNS: "http://opengeo.org",
-                // featurePrefix: this.featurePrefix,
                 geometryName: "the_geom",
                 srsName: this.srsName,
                 schema: "http://demo.opengeo.org/geoserver/wfs/DescribeFeatureType?version=1.1.0&typename=og:roads"
         })
     })
-}); 
+});
 
+// Add layers to map
 map.addLayers([new OpenLayers.Layer.OSM(), vectorLayer]);
 
 // configure the snapping agent
@@ -129,19 +129,20 @@ var split = new OpenLayers.Control.Split({
 map.addControl(split);
 split.activate();
 
+// Ceate GhostNodes control
 var gNodes = new OpenLayers.Control.GhostNodes({layer: vectorLayer});
 gNodes.addSplit(split);
 map.addControl(gNodes);
 gNodes.activate();
 
-// add some editing tools to a panel
+// Add some editing tools to a panel
 var panel = new OpenLayers.Control.Panel({
     displayClass: 'customEditingToolbar',
     allowDepress: true
 });
 panel.addControls([
     new DeleteFeature(vectorLayer, {title: "Delete Feature"}),
-    new OpenLayers.Control.ModifyFeature(vectorLayer, {title: "Draw Feature"}),
+    new OpenLayers.Control.ModifyFeature(vectorLayer, {title: "Modify Feature"}),
     new OpenLayers.Control.DrawFeature(
         vectorLayer, 
         OpenLayers.Handler.Path, {
@@ -151,11 +152,12 @@ panel.addControls([
         }
     )
 ]);
-
 map.addControl(panel);
+
+// Set center
 map.setCenter(new OpenLayers.LonLat(-11561460.5, 5541773), 15);
 
-
+// Used by eventListeners of split agent
 function flashFeatures(features, index) {
     if(!index) {
         index = 0;
