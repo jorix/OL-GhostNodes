@@ -133,11 +133,10 @@ split.activate();
 var gNodes = new OpenLayers.Control.GhostNodes({layer: vectorLayer});
 gNodes.addSplit(split);
 map.addControl(gNodes);
-gNodes.activate();
 
 // Add some editing tools to a panel
 var panel = new OpenLayers.Control.Panel({
-    displayClass: 'customEditingToolbar',
+    displayClass: 'olControlEditingToolbar',
     allowDepress: true
 });
 panel.addControls([
@@ -150,7 +149,20 @@ panel.addControls([
             displayClass: "olControlDrawFeaturePoint",
             handlerOptions: {multi: true}
         }
-    )
+    ),
+    new OpenLayers.Control.Button({
+        displayClass: "olControlGhostNodes", 
+        title: "Ghost Nodes on/off", 
+        trigger: function() {
+            if (this.active) {
+                gNodes.deactivate();
+                this.deactivate();
+            } else {
+                gNodes.activate();
+                this.activate();
+            }
+        }
+    })
 ]);
 map.addControl(panel);
 

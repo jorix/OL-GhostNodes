@@ -15,6 +15,7 @@ Example:
 ```javascript
     ...
     var mySplitControl = new OpenLayers.Control.Split({source: vectorLayer ...});
+    ...
     var gNodes = new OpenLayers.Control.GhostNodes({layer: myVectorLayer});
     gNodes.addSplit(mySplitControl);
     map.addControl(gNodes);
@@ -30,6 +31,8 @@ Examples:
 TODO:
 -----
  * if dragging a node the lines intersect with other should trigger a split (trigger the vertexXXX events)
+ * docs
+ * and ...
 
 Compatibility with OpenLayers releases:
 ---------------------------------------

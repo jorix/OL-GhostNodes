@@ -1,51 +1,25 @@
-.customEditingToolbar {
-    float: right;
-    right: 0px;
-    height: 30px; 
+.olControlModifyFeatureItemActive {
+    background-position: -1px -24px;
 }
-.customEditingToolbar div {
-    float: right;
-    margin: 5px;
-    width: 24px;
-    height: 24px;
+.olControlModifyFeatureItemInactive {
+
+    background-position: -1px -1px;
 }
-.olControlNavigationItemActive { 
-    background-image: url("http://www.openlayers.org/dev/theme/default/img/editing_tool_bar.png");
-    background-repeat: no-repeat;
-    background-position: -103px -23px; 
-}
-.olControlNavigationItemInactive { 
-    background-image: url("http://www.openlayers.org/dev/theme/default/img/editing_tool_bar.png");
-    background-repeat: no-repeat;
-    background-position: -103px -0px; 
-}
-.olControlDrawFeaturePointItemInactive { 
-    background-image: url("http://www.openlayers.org/dev/theme/default/img/editing_tool_bar.png");
-    background-repeat: no-repeat;
-    background-position: -77px 0px; 
-}
-.olControlDrawFeaturePointItemActive { 
-    background-image: url("http://www.openlayers.org/dev/theme/default/img/editing_tool_bar.png");
-    background-repeat: no-repeat;
-    background-position: -77px -23px ;                                                                   
-}
-.olControlModifyFeatureItemActive { 
-    background-image: url(http://www.openlayers.org/dev/theme/default/img/move_feature_on.png);
-    background-repeat: no-repeat;
-    background-position: 0px 1px;
-}
-.olControlModifyFeatureItemInactive { 
-    background-image: url(http://www.openlayers.org/dev/theme/default/img/move_feature_off.png);
-    background-repeat: no-repeat;
-    background-position: 0px 1px;
-}
-.olControlDeleteFeatureItemActive { 
+div.olControlDeleteFeatureItemActive {
     background-image: url(http://www.openlayers.org/dev/theme/default/img/remove_point_on.png);
-    background-repeat: no-repeat;
-    background-position: 0px 1px;
+    background-position: 0px 0px;
 }
-.olControlDeleteFeatureItemInactive { 
+div.olControlDeleteFeatureItemInactive {
     background-image: url(http://www.openlayers.org/dev/theme/default/img/remove_point_off.png);
-    background-repeat: no-repeat;
-    background-position: 0px 1px;
+    background-position: 0px 0px;
+}
+div.olControlGhostNodesItemActive {
+    background-image: url(http://www.openlayers.org/dev/img/marker-blue.png);
+    background-color: #fb0;
+    background-position: 2px -3px;
+}
+div.olControlGhostNodesItemInactive {
+    background-image: url(http://www.openlayers.org/dev/img/marker-blue.png);
+    background-color: #ddd;
+    background-position: 2px -3px;
 }
