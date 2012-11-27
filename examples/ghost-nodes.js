@@ -91,14 +91,18 @@ var vectorLayer = new OpenLayers.Layer.Vector("Editable Features", {
     strategies: [new OpenLayers.Strategy.Fixed()],
     projection: new OpenLayers.Projection("EPSG:4326"),
     styleMap: styles,
-    protocol: new OpenLayers.Protocol.WFS({
-        version: "1.1.0",
+    protocol: new OpenLayers.Protocol.HTTP({
         srsName: "EPSG:4326",
-        url: "data/demo_opengeo_org_geoserver_wfs.xml" ,
-        featureNS :  "http://opengeo.org",
-        featureType: "roads",
-        geometryName: "the_geom",
-        schema: "http://demo.opengeo.org/geoserver/wfs/DescribeFeatureType?version=1.1.0&typename=og:roads"
+        url: "data/demo_opengeo_org_geoserver_wfs.xml",
+        format: OpenLayers.Format.WFST({
+                version: "1.1.0",
+                featureType: "roads",
+                featureNS: "http://opengeo.org",
+                // featurePrefix: this.featurePrefix,
+                geometryName: "the_geom",
+                srsName: this.srsName,
+                schema: "http://demo.opengeo.org/geoserver/wfs/DescribeFeatureType?version=1.1.0&typename=og:roads"
+        })
     })
 }); 
 
