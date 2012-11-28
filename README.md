@@ -31,6 +31,7 @@ Examples:
 TODO:
 -----
  * if dragging a node the lines intersect with other should trigger a split (trigger the vertexXXX events)
+ * unSplit by vertexremoved if is single jointed.
  * docs
  * and ...
 
