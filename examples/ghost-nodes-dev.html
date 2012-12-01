@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="lang" content="en" />
+        <meta name="author" content="Jorix" />
+        <meta name="description" content="Usage example of OpenLayers using Snap/Split and GhostNodes for OpenLayers to keep the junctions of lines as a network." />
+        <meta name="keywords" content="OpenLayers, snapping, splitting, GhostNodes, network" 
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="http://jorix.github.com/OL-FeaturePopups/github-pages/forkme_banner.css" type="text/css">
+
+        <title>Example of OpenLayers to keep the junctions of lines as a network</title>
+
+        <script src="http://jorix.github.com/OL-FeaturePopups/lib/releaseEnvirontment.js"></script>
+        <script>
+            var release = new releaseEnvironment();
+            release.writeScripts();
+        </script>
+        <link rel="stylesheet" href="ghost-nodes.css" type="text/css">
+        <script src="../lib/Control/GhostNodes.js"></script>
+
+    </head>
+    <body>
+        <h1 id="title">??</h1>
+        <div id="environmentForm"></div>
+        <script>
+            release.writeSelectionForm("environmentForm", "title");
+        </script>
+        <a id="forkme_banner" href="https://github.com/jorix/OL-GhostNodes">View on GitHub</a>
+        <div id="map" style="width: 600px; height: 500px;" class="smallmap"></div>
+        <div id="docs">
+            <p>
+                View the <a href="ghost-nodes.js" target="_blank">ghost-nodes.js</a> + <a href="ghost-nodes-log.js" target="_blank">ghost-nodes-log.js</a> 
+                source to see how this is done.
+            </p>
+        </div>
+
+        <script src="ghost-nodes.js" type="text/javascript"></script>
+        <script src="ghost-nodes-log.js" type="text/javascript"></script>
+</body>
+</html>
+
+

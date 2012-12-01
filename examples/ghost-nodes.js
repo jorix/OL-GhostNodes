@@ -31,11 +31,7 @@ var map = new OpenLayers.Map({
         -11563906, 5540550, -11559015, 5542996
     ),
     projection: new OpenLayers.Projection("EPSG:900913"),
-    units: "m",
-    controls: [
-        new OpenLayers.Control.PanZoom(),
-        new OpenLayers.Control.Navigation()
-    ]
+    units: "m"
 });
 
 // Crate a vector layer

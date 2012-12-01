@@ -37,3 +37,11 @@ div.olButtonTextItemInactive {
 div.olControlGhostNodes:after {
     content:"Nodes";
 }
+/* olControlSummary button text */
+div.olControlSummary:after {
+    content:"Log";
+}
+div.olControlSummary {
+    width: 35px;
+    color: blue;
+}
