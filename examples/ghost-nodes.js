@@ -131,8 +131,12 @@ split.activate();
 
 // Ceate GhostNodes control
 var gNodes = new OpenLayers.Control.GhostNodes({
-    layer: vectorLayer, 
-    splitControl: split
+    layer: vectorLayer,
+    splitControl: split,
+    // To add as a button on a panel:
+    type: OpenLayers.Control.TYPE_TOGGLE,
+    displayClass: "olControlGhostNodes olButtonText", 
+    title: "Ghost Nodes on/off"
 });
 map.addControl(gNodes);
 
@@ -142,29 +146,21 @@ var panel = new OpenLayers.Control.Panel({
     allowDepress: true
 });
 panel.addControls([
-    new DeleteFeature(vectorLayer, {title: "Delete Feature"}),
-    new OpenLayers.Control.ModifyFeature(vectorLayer, {title: "Modify Feature"}),
-    new OpenLayers.Control.DrawFeature(
-        vectorLayer, 
-        OpenLayers.Handler.Path, {
-            title: "Draw Feature",
-            displayClass: "olControlDrawFeaturePoint",
-            handlerOptions: {multi: true}
-        }
-    ),
-    new OpenLayers.Control.Button({
-        displayClass: "olControlGhostNodes", 
-        title: "Ghost Nodes on/off", 
-        trigger: function() {
-            if (this.active) {
-                gNodes.deactivate();
-                this.deactivate();
-            } else {
-                gNodes.activate();
-                this.activate();
-            }
-        }
-    })
+    new DeleteFeature(vectorLayer, {
+        // To add as a button on a panel:
+        title: "Delete Feature"
+    }),
+    new OpenLayers.Control.ModifyFeature(vectorLayer, {
+        // To add as a button on a panel:
+        title: "Modify Feature"
+    }),
+    new OpenLayers.Control.DrawFeature(vectorLayer, OpenLayers.Handler.Path, {
+        handlerOptions: {multi: true},
+        // To add as a button on a panel:
+        title: "Draw Feature",
+        displayClass: "olControlDrawFeaturePoint"
+    }),
+    gNodes
 ]);
 map.addControl(panel);
 

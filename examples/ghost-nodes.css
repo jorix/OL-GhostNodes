@@ -13,13 +13,27 @@ div.olControlDeleteFeatureItemInactive {
     background-image: url(http://www.openlayers.org/dev/theme/default/img/remove_point_off.png);
     background-position: 0px 0px;
 }
-div.olControlGhostNodesItemActive {
-    background-image: url(http://www.openlayers.org/dev/img/marker-blue.png);
-    background-color: #fb0;
-    background-position: 2px -3px;
+
+/* Generic button text */
+div.olButtonTextItemActive,
+div.olButtonTextItemInactive {
+    border: 1px solid #888;
+    width: 50px;
+    height: 20px;
+    border-radius: 4px;
+    background-image: none;
+    text-align: center;
+    font-weight: bold;
+    color: #888;
 }
-div.olControlGhostNodesItemInactive {
-    background-image: url(http://www.openlayers.org/dev/img/marker-blue.png);
+div.olButtonTextItemActive {
+    background-color: #fb0;
+    color: #333;
+}
+div.olButtonTextItemInactive {
     background-color: #ddd;
-    background-position: 2px -3px;
+}
+/* olControlGhostNodes button text */
+div.olControlGhostNodes:after {
+    content:"Nodes";
 }
