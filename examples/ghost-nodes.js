@@ -131,7 +131,7 @@ split.activate();
 
 // Ceate GhostNodes control
 var gNodes = new OpenLayers.Control.GhostNodes({
-    layer: vectorLayer,
+    layers: [vectorLayer],
     splitControl: split,
     // To add as a button on a panel:
     type: OpenLayers.Control.TYPE_TOGGLE,
