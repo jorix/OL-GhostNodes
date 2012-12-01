@@ -134,6 +134,7 @@ var gNodes = new OpenLayers.Control.GhostNodes({
     layers: [vectorLayer],
     splitControl: split,
     // To add as a button on a panel:
+    draw: function() {}, // nothing to draw.
     type: OpenLayers.Control.TYPE_TOGGLE,
     displayClass: "olControlGhostNodes olButtonText", 
     title: "Ghost Nodes on/off"
