@@ -130,8 +130,10 @@ map.addControl(split);
 split.activate();
 
 // Ceate GhostNodes control
-var gNodes = new OpenLayers.Control.GhostNodes({layer: vectorLayer});
-gNodes.addSplit(split);
+var gNodes = new OpenLayers.Control.GhostNodes({
+    layer: vectorLayer, 
+    splitControl: split
+});
 map.addControl(gNodes);
 
 // Add some editing tools to a panel
