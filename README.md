@@ -14,13 +14,13 @@ Example:
 
 ```javascript
     ...
-    var mySplitControl = new OpenLayers.Control.Split({source: vectorLayer ...});
-    ...
-    var gNodes = new OpenLayers.Control.GhostNodes({layer: myVectorLayer});
-    gNodes.addSplit(mySplitControl);
+    var gNodes = new OpenLayers.Control.GhostNodes({layers: [myVectorLayer]});
     map.addControl(gNodes);
     gNodes.activate();
     ...
+    // and if using a `Split` control should make it known to the `GhostNodes` as:
+    var mySplitControl = new OpenLayers.Control.Split({source: vectorLayer ...});
+    gNodes.setSplit(mySplitControl);
 ```
 and nothing more is required.
 
