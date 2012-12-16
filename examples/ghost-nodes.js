@@ -152,7 +152,7 @@ panel.addControls([
         title: "Modify Feature"
     }),
     new OpenLayers.Control.DrawFeature(vectorLayer, OpenLayers.Handler.Path, {
-        handlerOptions: {multi: true},
+        handlerOptions: {multi: true, freehandToggle: null},
         // To add as a button on a panel:
         title: "Draw Feature",
         displayClass: "olControlDrawFeaturePoint"
