@@ -160,6 +160,7 @@ panel.addControls([
     gNodes
 ]);
 map.addControl(panel);
+gNodes.activate();
 
 // Set center
 map.setCenter(new OpenLayers.LonLat(-11561460.5, 5541773), 15);
