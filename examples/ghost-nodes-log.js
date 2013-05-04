@@ -1,3 +1,9 @@
+var consoleLog = function (text) {
+    if (window.console && window.console.log) {
+        console.log(text);
+    }
+};
+
 panel.addControls([
     new OpenLayers.Control.Button({
         // To add as a button on a panel:
@@ -8,14 +14,14 @@ panel.addControls([
                 collection[key] = sum ? ++sum : 1;
             };
             var logCollection = function (title, collection) {
-                console.log(title + ":");
+                consoleLog(title + ":");
                 var keys = [];
                 for (var key in collection) {
                     keys.push(key);
                 }
                 keys.sort();
                 for (var i = 0, len = keys.length; i < len; i++) {
-                    console.log("  " + keys[i] + ": " + collection[keys[i]]);
+                    consoleLog("  " + keys[i] + ": " + collection[keys[i]]);
                 }
             };
             // Summarize
@@ -44,7 +50,7 @@ panel.addControls([
             logCollection("Types & States", sumTypes);
             logCollection("Attribute label & States", sumAttributes1);
             logCollection("Attribute cat & States", sumAttributes2);
-            console.log("Total: " + features.length + " =================\n");
+            consoleLog("Total: " + features.length + " =================\n");
         },        
         draw: function() {}, // nothing to draw.
         displayClass: "olControlSummary olButtonText", 
