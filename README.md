@@ -1,9 +1,12 @@
 Control for OpenLayers to maintain the junction points as a network.
 ====================================================================
 
-**GhostNodes** control for OpenLayers maintains the junction points as a network lines at modify the ends of the segments.
+**GhostNodes** control for OpenLayers maintains the junction of initial vertices and end vertices of the lines as a network. 
+Modifying a initial or final vertex are modified all of the vertices of other lines that begin or end at that vertex.
 
-Control is specially designed to work together with `OpenLayers.Control.ModifyFeature` and `OpenLayers.Control.Split`.
+This control is specially designed to work together with `OpenLayers.Control.ModifyFeature` and `OpenLayers.Control.Split`.
+
+Is also recommended to use a `OpenLayers.Control.Snapping`.
 
 Please, open a **issue** if you have questions or problems using this control.
 
