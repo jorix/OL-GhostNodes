@@ -6,11 +6,11 @@
     background-position: -1px -1px;
 }
 div.olControlDeleteFeatureItemActive {
-    background-image: url(http://www.openlayers.org/dev/theme/default/img/remove_point_on.png);
+    background-image: url(http://dev.openlayers.org/theme/default/img/remove_point_on.png);
     background-position: 0px 0px;
 }
 div.olControlDeleteFeatureItemInactive {
-    background-image: url(http://www.openlayers.org/dev/theme/default/img/remove_point_off.png);
+    background-image: url(http://dev.openlayers.org/theme/default/img/remove_point_off.png);
     background-position: 0px 0px;
 }
 
